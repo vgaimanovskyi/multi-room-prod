@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="./favicon.png" sizes="32x32">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <title>Multy-room platformer</title>
+  <script type="module" crossorigin src="./assets/index-BBQhnKjq.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DBVBhZ_C.css">
+</head>
+
+<body>
+  <div id="app">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Main Menu -->
+    <div id="mainMenu" class="ui-panel">
+      <h1>Game Starter Kit</h1>
+      <button data-action="start">Play</button>
+      <div style="margin-top: 20px; font-size: 12px;">
+        <table style="margin: 0 auto;">
+          <tr>
+            <td>WASD</td>
+            <td>-</td>
+            <td>Move</td>
+          </tr>
+          <tr>
+            <td>SPACE</td>
+            <td>-</td>
+            <td>Attack</td>
+          </tr>
+          <tr>
+            <td>`</td>
+            <td>-</td>
+            <td>Debug</td>
+          </tr>
+          <tr>
+            <td>ESC</td>
+            <td>-</td>
+            <td>Pause</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- Pause Menu -->
+    <div id="pauseMenu" class="ui-panel">
+      <h2>PAUSED</h2>
+      <button data-action="resume">RESUME</button>
+      <button data-action="returnToMenu">QUIT TO MENU</button>
+    </div>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="ui-panel active">
+      <h2>Loading...</h2>
+      <p>Sharpening the pixels...</p>
+    </div>
+    <!-- Game Over Screen -->
+    <div id="gameOverMenu" class="ui-panel">
+      <h2>GAME OVER</h2>
+      <button data-action="start">Play Again</button>
+      <button data-action="returnToMenu">Main Menu</button>
+    </div>
+    <!-- Mission Complete Screen -->
+    <div id="levelCompleteMenu" class="ui-panel">
+      <h2>LEVEL COMPLETE</h2>
+      <button data-action="start">Play Again</button>
+      <button data-action="returnToMenu">Main Menu</button>
+    </div>
+  </div>
+</body>
+
+</html>
