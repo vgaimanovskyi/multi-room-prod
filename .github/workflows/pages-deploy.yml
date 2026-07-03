@@ -1,4 +1,4 @@
-name: Deploy Pages
+name: Deploy to GitHub Pages with Retry
 
 on:
   push:
