@@ -27,6 +27,12 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Validate site files
+        run: |
+          test -d assets || { echo "Missing required directory: assets"; exit 1; }
+          test -f index.html || { echo "Missing required file: index.html"; exit 1; }
+          test -f favicon.png || { echo "Missing required file: favicon.png"; exit 1; }
+
       - name: Prepare Pages content
         run: |
           mkdir -p _site
@@ -44,6 +50,18 @@ jobs:
         uses: actions/deploy-pages@v5
         continue-on-error: true
 
+      - name: Log initial deployment failure
+        if: steps.deploy.outcome == 'failure'
+        run: echo "Initial deployment attempt failed. Retrying once..."
+
       - name: Retry deploy to GitHub Pages
+        id: deploy_retry
         if: steps.deploy.outcome == 'failure'
         uses: actions/deploy-pages@v5
+        continue-on-error: true
+
+      - name: Fail if deployment did not recover
+        if: steps.deploy.outcome == 'failure' && steps.deploy_retry.outcome == 'failure'
+        run: |
+          echo "Deployment failed on both attempts."
+          exit 1
