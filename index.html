@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <title>Multy-room platformer</title>
-  <script type="module" crossorigin src="./assets/index-DaHVbJe0.js"></script>
+  <script type="module" crossorigin src="./assets/index-rmRPesfY.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-aCYOpFBk.css">
 </head>
 
@@ -57,6 +57,12 @@
     <div id="loadingScreen" class="ui-panel active">
       <h2>Loading...</h2>
       <p>Sharpening the pixels...</p>
+    </div>
+    <!-- Continue Screen -->
+    <div id="continueMenu" class="ui-panel">
+      <h2>Continue (<span id="continuesCount"></span>)</h2>
+      <button data-action="continue">Continue</button>
+      <button data-action="returnToMenu">Quit to Menu</button>
     </div>
     <!-- Game Over Screen -->
     <div id="gameOverMenu" class="ui-panel">
