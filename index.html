@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <title>Multy-room platformer</title>
-  <script type="module" crossorigin src="./assets/index-BPAoS2Dq.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-aCYOpFBk.css">
+  <script type="module" crossorigin src="./assets/index-CoIKtCQn.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BL9GUoUf.css">
 </head>
 
 <body>
@@ -22,6 +22,7 @@
     <div id="mainMenu" class="ui-panel">
       <h1>Game Starter Kit</h1>
       <button data-action="start">Play</button>
+      <button data-action="openPassword">Password</button>
       <div style="margin-top: 20px; font-size: 12px;">
         <table style="margin: 0 auto;">
           <tr>
@@ -115,6 +116,18 @@
       </div>
       <button data-action="resetSettings">Reset</button>
       <button data-action="closeSettings">Close</button>
+    </div>
+    <!-- Password Panel -->
+    <div id="passwordMenu" class="ui-panel settings-panel">
+      <h2>ENTER PASSWORD</h2>
+      <div class="password-row">
+        <input type="text" class="password-input" maxlength="1" />
+        <input type="text" class="password-input" maxlength="1" />
+        <input type="text" class="password-input" maxlength="1" />
+        <input type="text" class="password-input" maxlength="1" />
+      </div>
+      <button data-action="applyPassword">Apply</button>
+      <button data-action="closePassword">Close</button>
     </div>
   </div>
 </body>
