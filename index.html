@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <title>Multy-room platformer</title>
-  <script type="module" crossorigin src="./assets/index-B7sRwGKO.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BL9GUoUf.css">
+  <script type="module" crossorigin src="./assets/index-ChSHZWNu.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DDYe05sS.css">
 </head>
 
 <body>
@@ -23,29 +23,19 @@
       <h1>Game Starter Kit</h1>
       <button data-action="start">Play</button>
       <button data-action="openPassword">Password</button>
-      <div style="margin-top: 20px; font-size: 12px;">
-        <table style="margin: 0 auto;">
-          <tr>
-            <td>WASD</td>
-            <td>-</td>
-            <td>Move</td>
-          </tr>
-          <tr>
-            <td>SPACE</td>
-            <td>-</td>
-            <td>Attack</td>
-          </tr>
-          <tr>
-            <td>`</td>
-            <td>-</td>
-            <td>Debug</td>
-          </tr>
-          <tr>
-            <td>ESC</td>
-            <td>-</td>
-            <td>Pause</td>
-          </tr>
-        </table>
+      <div class="difficulty-select">
+        <label class="difficulty-option">
+          <input type="radio" name="difficulty" class="difficulty-radio" data-difficulty="easy" />
+          <span>Easy</span>
+        </label>
+        <label class="difficulty-option">
+          <input type="radio" name="difficulty" class="difficulty-radio" data-difficulty="medium" checked />
+          <span>Medium</span>
+        </label>
+        <label class="difficulty-option">
+          <input type="radio" name="difficulty" class="difficulty-radio" data-difficulty="hard" />
+          <span>Hard</span>
+        </label>
       </div>
     </div>
     <!-- Pause Menu -->
@@ -73,7 +63,7 @@
     </div>
     <!-- Mission Complete Screen -->
     <div id="levelCompleteMenu" class="ui-panel">
-      <h2>LEVEL COMPLETE</h2>
+      <h2><span id="levelCompleteLevel"></span> COMPLETE</h2>
       <button data-action="nextLevel">Next Level</button>
       <button data-action="returnToMenu">Main Menu</button>
     </div>
