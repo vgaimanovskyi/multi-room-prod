@@ -9,14 +9,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <title>Multy-room platformer</title>
-  <script type="module" crossorigin src="./assets/index-D67aV8Gy.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DDYe05sS.css">
+  <script type="module" crossorigin src="./assets/index-hLOSpDm6.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-gMY1xOIC.css">
 </head>
 
 <body>
   <div id="app">
     <canvas id="gameCanvas"></canvas>
     <button id="settingsBtn" class="mute-btn" data-action="settings">⚙️</button>
+    <button id="infoBtn" class="mute-btn info-btn" data-action="info">i</button>
 
     <!-- Main Menu -->
     <div id="mainMenu" class="ui-panel">
@@ -67,39 +68,46 @@
       <button data-action="nextLevel">Next Level</button>
       <button data-action="returnToMenu">Main Menu</button>
     </div>
+    <!-- Game Complete Screen -->
+    <div id="gameCompleteMenu" class="ui-panel">
+      <h2>YOU WIN!</h2>
+      <p>Congratulations, you've completed the game!</p>
+      <p><br></p>
+      <button data-action="returnToMenu">Main Menu</button>
+    </div>
     <!-- Settings Panel -->
-    <div id="settingsMenu" class="ui-panel settings-panel">
+    <div id="settingsMenu" class="ui-panel panel-overlay">
       <h2>SETTINGS</h2>
-      <div class="settings-section">
+      <div class="panel-section">
         <h3>Sound</h3>
-        <label class="settings-row">
+        <label class="panel-row">
           <span>Mute</span>
           <input type="checkbox" id="muteCheckbox" />
         </label>
-        <label class="settings-row">
+        <label class="panel-row">
           <span>Volume</span>
           <input type="range" id="volumeSlider" min="0" max="100" />
         </label>
       </div>
-      <div class="settings-section">
+      <div class="panel-section">
         <h3>Controls</h3>
-        <div class="settings-row" data-action-name="moveUp">
+        <div class="panel-row" data-action-name="moveUp">
           <span>Move Up</span>
           <button class="rebind-btn" data-action="rebind">W</button>
         </div>
-        <div class="settings-row" data-action-name="moveDown">
+        <div class="panel-row" data-action-name="moveDown">
           <span>Move Down</span>
           <button class="rebind-btn" data-action="rebind">S</button>
         </div>
-        <div class="settings-row" data-action-name="moveLeft">
+        <div class="panel-row" data-action-name="moveLeft">
           <span>Move Left</span>
           <button class="rebind-btn" data-action="rebind">A</button>
         </div>
-        <div class="settings-row" data-action-name="moveRight">
+        <div class="panel-row" data-action-name="moveRight">
           <span>Move Right</span>
           <button class="rebind-btn" data-action="rebind">D</button>
         </div>
-        <div class="settings-row" data-action-name="attack">
+        <div class="panel-row" data-action-name="attack">
           <span>Attack</span>
           <button class="rebind-btn" data-action="rebind">SPACE</button>
         </div>
@@ -108,9 +116,9 @@
       <button data-action="closeSettings">Close</button>
     </div>
     <!-- Password Panel -->
-    <div id="passwordMenu" class="ui-panel settings-panel">
+    <div id="passwordMenu" class="ui-panel panel-overlay">
       <h2>ENTER PASSWORD</h2>
-      <div class="password-row">
+      <div class="panel-row panel-row--center">
         <input type="text" class="password-input" maxlength="1" />
         <input type="text" class="password-input" maxlength="1" />
         <input type="text" class="password-input" maxlength="1" />
@@ -118,6 +126,31 @@
       </div>
       <button data-action="applyPassword">Apply</button>
       <button data-action="closePassword">Close</button>
+    </div>
+    <!-- Info Panel -->
+    <div id="infoMenu" class="ui-panel panel-overlay">
+      <h2>ABOUT</h2>
+      <div class="panel-section">
+        <h3>Kings and Pigs</h3>
+        <p>A pet project 2D multi-room platformer built with vanilla TypeScript and Canvas 2D.</p>
+      </div>
+      <div class="panel-section">
+        <h3>Author</h3>
+        <p>Vadym Haimanovskiy</p>
+      </div>
+      <div class="panel-section">
+        <h3>Resources Used</h3>
+        <ul>
+          <li>Sprites: <a href="https://pixelfrog-assets.itch.io/kings-and-pigs" target="_blank"
+              rel="noopener noreferrer">pixelfrog-assets.itch.io/kings-and-pigs</a></li>
+          <li>Audio: <a href="https://pixabay.com/" target="_blank" rel="noopener noreferrer">pixabay.com</a></li>
+          <li>Tutorials: <a href="https://www.youtube.com/@Frankslaboratory/videos" target="_blank"
+              rel="noopener noreferrer">Frank's Laboratory</a>, <a href="https://www.youtube.com/@ChrisCourses"
+              target="_blank" rel="noopener noreferrer">Chris Courses</a></li>
+          <li>Built with AI assistance (Claude Code)</li>
+        </ul>
+      </div>
+      <button class="panel-close" data-action="closeInfo">Close</button>
     </div>
   </div>
 </body>
