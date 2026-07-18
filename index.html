@@ -4,13 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="./favicon.png" sizes="32x32">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <title>Multy-room platformer</title>
-  <script type="module" crossorigin src="./assets/index-hLOSpDm6.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-gMY1xOIC.css">
+  <script type="module" crossorigin src="./assets/index-BdEmZEO0.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Dm9BY89S.css">
 </head>
 
 <body>
@@ -18,6 +19,21 @@
     <canvas id="gameCanvas"></canvas>
     <button id="settingsBtn" class="mute-btn" data-action="settings">⚙️</button>
     <button id="infoBtn" class="mute-btn info-btn" data-action="info">i</button>
+
+    <!-- Touch Controls Overlay -->
+    <div id="touchControls">
+      <button class="touch-btn touch-btn--left" data-touch-action="moveLeft">◀</button>
+      <button class="touch-btn touch-btn--right" data-touch-action="moveRight">▶</button>
+      <button class="touch-btn touch-btn--attack" data-touch-action="attack">⚔</button>
+      <button class="touch-btn touch-btn--jump" data-touch-action="moveUp">⬆</button>
+      <button class="touch-btn touch-btn--pause" data-touch-action="pause">⏸︎</button>
+    </div>
+
+    <!-- Rotate Device Overlay -->
+    <div id="rotateOverlay">
+      <p class="rotate-icon">↻</p>
+      <p>Rotate your device</p>
+    </div>
 
     <!-- Main Menu -->
     <div id="mainMenu" class="ui-panel">
@@ -89,7 +105,7 @@
           <input type="range" id="volumeSlider" min="0" max="100" />
         </label>
       </div>
-      <div class="panel-section">
+      <div class="panel-section settings-controls">
         <h3>Controls</h3>
         <div class="panel-row" data-action-name="moveUp">
           <span>Move Up</span>
