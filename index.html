@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <title>Multy-room platformer</title>
-  <script type="module" crossorigin src="./assets/index-BdEmZEO0.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-Dm9BY89S.css">
-</head>
+  <script type="module" crossorigin src="./assets/index-D625g9ec.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BkBE_-Kq.css">
+<link rel="manifest" href="./manifest.webmanifest"></head>
 
 <body>
   <div id="app">
@@ -26,7 +26,7 @@
       <button class="touch-btn touch-btn--right" data-touch-action="moveRight">▶</button>
       <button class="touch-btn touch-btn--attack" data-touch-action="attack">⚔</button>
       <button class="touch-btn touch-btn--jump" data-touch-action="moveUp">⬆</button>
-      <button class="touch-btn touch-btn--pause" data-touch-action="pause">⏸︎</button>
+      <button class="touch-btn touch-btn--pause" data-touch-action="pause">❚❚</button>
     </div>
 
     <!-- Rotate Device Overlay -->
@@ -35,11 +35,18 @@
       <p>Rotate your device</p>
     </div>
 
+    <!-- PWA Update Banner -->
+    <div id="pwaUpdateBanner" class="pwa-update-banner">
+      <span>A new version is available.</span>
+      <button data-action="pwaReload">Reload</button>
+    </div>
+
     <!-- Main Menu -->
     <div id="mainMenu" class="ui-panel">
       <h1>Game Starter Kit</h1>
       <button data-action="start">Play</button>
       <button data-action="openPassword">Password</button>
+      <button class="install-btn" data-action="installApp">Install App</button>
       <div class="difficulty-select">
         <label class="difficulty-option">
           <input type="radio" name="difficulty" class="difficulty-radio" data-difficulty="easy" />
